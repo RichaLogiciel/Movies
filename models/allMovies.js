@@ -1,6 +1,6 @@
 const { default: mongoose } = require('mongoose');
 
-const movieSchema = mongoose.Schema({
+const movieSchema = new mongoose.Schema({
     title:{
         type: String,
         required: true
@@ -13,7 +13,7 @@ const movieSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    caste: {
+    cast: {
         type: String,
         required: true
     },
@@ -26,8 +26,9 @@ const movieSchema = mongoose.Schema({
         required: true
     },
     coverImage: {
-        type: Buffer,
-        required: true
+        data: Buffer,
+        contentType: String
+
     },
     availabilityStatus: {
         type: String,
